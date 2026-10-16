@@ -1,30 +1,31 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    Supremacia 1942 — Identidade visual
-   Conceito: uma mesa de guerra escura, com um mapa de estado-maior em papel
-   envelhecido no centro. Aço fosco + latão nas bordas, tinta sépia no mapa.
+   Conceito: "Cartaz de Guerra" — fundo de noite azul-marinho, painéis de aço
+   azulado, acentos em carmim e marfim. Tipografia de broadside dos anos 40,
+   sem latão, sem sépia: uma identidade própria, não um clone.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --mesa:        #0b1013;
-  --mesa-clara:  #111a1f;
-  --painel:      #16222a;
-  --painel-alto: #1d2c36;
-  --borda:       #26363f;
-  --borda-clara: #354a55;
+  --mesa:        #0d1520;
+  --mesa-clara:  #132030;
+  --painel:      #1a2b40;
+  --painel-alto: #223650;
+  --borda:       #2e4466;
+  --borda-clara: #3d5a80;
 
-  --papel:       #e7ddc4;
-  --papel-fosco: #d5c9a9;
-  --tinta:       #4a3d29;
+  --papel:       #f0e6d2;
+  --papel-fosco: #e0d4b8;
+  --tinta:       #1f2d4a;
 
-  --latao:       #c9a227;
-  --latao-claro: #e2c157;
-  --texto:       #d9e2e8;
-  --texto-fraco: #8ea1ad;
+  --latao:       #c0392b;
+  --latao-claro: #e74c3c;
+  --texto:       #ece6d8;
+  --texto-fraco: #9aa8bf;
 
-  --verde:       #5aa469;
-  --vermelho:    #cf5b4a;
-  --azul:        #5b93c7;
-  --roxo:        #a97bc4;
+  --verde:       #27ae60;
+  --vermelho:    #e74c3c;
+  --azul:        #3498db;
+  --roxo:        #9b59b6;
 
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -48,7 +49,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Textura sutil de mesa: ruído muito leve, tudo gerado em CSS */
   background-image:
-    radial-gradient(ellipse at 50% -10%, rgba(90,140,170,.10), transparent 60%),
+    radial-gradient(ellipse at 50% -10%, rgba(192,57,43,.10), transparent 60%),
     repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
 }
 
@@ -125,7 +126,7 @@ body {
   transition: background .12s, color .12s;
 }
 .controles button:hover { background: rgba(255,255,255,.07); color: var(--texto); }
-.controles button.ativo { background: var(--latao); color: #1a1408; }
+.controles button.ativo { background: var(--latao); color: #ffffff; }
 #passoDia { min-width: 0; letter-spacing: .06em; }
 
 .botaoAjuda {
@@ -135,7 +136,7 @@ body {
   border: 1px solid var(--borda-clara); border-radius: 50%;
   cursor: pointer; transition: all .13s;
 }
-.botaoAjuda:hover { background: var(--latao); color: #1a1408; border-color: var(--latao); }
+.botaoAjuda:hover { background: var(--latao); color: #ffffff; border-color: var(--latao); }
 
 /* Manual de jogo */
 .manual { display: grid; gap: 22px; }
@@ -144,7 +145,7 @@ body {
   color: var(--latao); margin-bottom: 9px; padding-bottom: 6px;
   border-bottom: 1px solid var(--borda);
 }
-.manualSecao p, .manualSecao li { font-size: 12px; line-height: 1.62; color: #c3ced6; }
+.manualSecao p, .manualSecao li { font-size: 12px; line-height: 1.62; color: #d0d8e8; }
 .manualSecao ul { padding-left: 18px; display: grid; gap: 5px; }
 .manualSecao strong { color: var(--texto); }
 .manualGrade { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
@@ -159,7 +160,7 @@ body {
 .manualCartao .selo { font-size: 9px; }
 .manualCartao dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 11.5px; }
 .manualCartao dt { font-family: var(--mono); color: var(--texto-fraco); }
-.manualCartao dd { color: #c3ced6; }
+.manualCartao dd { color: #d0d8e8; }
 
 .identidade { margin-left: auto; display: flex; align-items: center; gap: 12px; }
 .farol {
@@ -170,7 +171,7 @@ body {
 .farol.ligado { background: var(--verde); color: var(--verde); }
 
 .minhaNacao { display: flex; align-items: center; gap: 9px; }
-.bolha { width: 26px; height: 26px; border-radius: 4px; background: #333; border: 1px solid rgba(255,255,255,.22); flex: none; }
+.bolha { width: 26px; height: 26px; border-radius: 4px; background: #2a3a50; border: 1px solid rgba(255,255,255,.22); flex: none; }
 .minhaNacao strong { display: block; font-size: 12.5px; letter-spacing: .03em; }
 .minhaNacao small { display: block; font-family: var(--mono); font-size: 9.5px; color: var(--texto-fraco); margin-top: 1px; }
 
@@ -214,7 +215,7 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
   border-left: 2px solid transparent;
 }
 .linha:hover { background: rgba(255,255,255,.035); }
-.linha.eu { background: rgba(201,162,39,.09); border-left-color: var(--latao); }
+.linha.eu { background: rgba(192,57,43,.09); border-left-color: var(--latao); }
 .linha .pos { font-family: var(--mono); font-size: 10px; color: var(--texto-fraco); text-align: right; }
 .linha .amostra { width: 11px; height: 11px; border-radius: 2px; border: 1px solid rgba(0,0,0,.5); }
 .linha .nome { font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -240,14 +241,14 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
   font-family: var(--mono); font-size: 9px; color: var(--texto-fraco);
   flex: none; padding-top: 2px;
 }
-.comunicado.destaque { background: rgba(201,162,39,.07); }
+.comunicado.destaque { background: rgba(192,57,43,.07); }
 .comunicado.destaque .texto { color: var(--latao-claro); }
-.comunicado .texto { color: #c3ced6; }
+.comunicado .texto { color: #d0d8e8; }
 .vazio { padding: 14px 12px; color: var(--texto-fraco); font-size: 11px; font-style: italic; }
 
 /* ─── Área do mapa ─── */
 
-#areaDoMapa { position: relative; overflow: hidden; background: #080c0e; min-height: 0; }
+#areaDoMapa { position: relative; overflow: hidden; background: #0a121c; min-height: 0; }
 #mapa { display: block; width: 100%; height: 100%; cursor: grab; }
 #mapa.arrastando { cursor: grabbing; }
 #mapa.atacando { cursor: crosshair; }
@@ -255,7 +256,7 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
 .ferramentas {
   position: absolute; top: 12px; left: 12px;
   display: flex; flex-direction: column; gap: 2px;
-  background: rgba(9,14,17,.86);
+  background: rgba(10,18,28,.86);
   border: 1px solid var(--borda-clara);
   border-radius: var(--raio);
   padding: 3px;
@@ -269,12 +270,12 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
   border: 0; border-radius: 4px; cursor: pointer;
 }
 .ferramentas button:hover { background: rgba(255,255,255,.09); color: var(--latao-claro); }
-.ferramentas button.ativo { background: var(--latao); color: #1a1408; }
+.ferramentas button.ativo { background: var(--latao); color: #ffffff; }
 
 .legenda {
   position: absolute; bottom: 12px; left: 12px;
   display: flex; flex-wrap: wrap; gap: 4px 14px; max-width: 62%;
-  background: rgba(9,14,17,.82);
+  background: rgba(10,18,28,.82);
   border: 1px solid var(--borda);
   border-radius: var(--raio);
   padding: 8px 11px;
@@ -287,7 +288,7 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
 
 .dica {
   position: absolute; top: 12px; right: 12px;
-  background: rgba(9,14,17,.9);
+  background: rgba(10,18,28,.9);
   border: 1px solid var(--borda-clara);
   border-left: 3px solid var(--latao);
   border-radius: var(--raio);
@@ -309,7 +310,7 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
 
 .aviso {
   position: absolute; bottom: 12px; right: 12px;
-  background: rgba(9,14,17,.92);
+  background: rgba(10,18,28,.92);
   border: 1px solid var(--verde);
   border-radius: var(--raio);
   padding: 9px 13px;
@@ -367,7 +368,7 @@ aside { background: var(--mesa-clara); min-height: 0; display: flex; flex-direct
   background: rgba(255,255,255,.08); border: 1px solid var(--borda-clara);
   color: var(--texto);
 }
-.etiqueta.dourada { background: rgba(201,162,39,.16); border-color: rgba(201,162,39,.5); color: var(--latao-claro); }
+.etiqueta.dourada { background: rgba(192,57,43,.16); border-color: rgba(192,57,43,.5); color: var(--latao-claro); }
 .etiqueta.ruim { background: rgba(207,91,74,.16); border-color: rgba(207,91,74,.5); color: #e88a7c; }
 .etiqueta.bem { background: rgba(90,164,105,.16); border-color: rgba(90,164,105,.5); color: #8ed09a; }
 
@@ -418,7 +419,7 @@ button.acao {
   font-family: var(--mono); font-size: 9.5px; font-weight: 700;
   letter-spacing: .09em; text-transform: uppercase;
   padding: 6px 11px; border-radius: 4px; cursor: pointer;
-  color: #1a1408; background: linear-gradient(180deg, var(--latao-claro), var(--latao));
+  color: #ffffff; background: linear-gradient(180deg, var(--latao-claro), var(--latao));
   border: 1px solid #8d7016;
   box-shadow: 0 1px 0 rgba(255,255,255,.35) inset;
   transition: filter .12s;
@@ -535,7 +536,7 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
 }
 .caixa h2 {
   font-family: var(--mono); font-size: 20px; letter-spacing: .1em;
-  text-transform: uppercase; color: #f0f5f8; text-align: center;
+  text-transform: uppercase; color: #f5f0e8; text-align: center;
 }
 .caixa h2 span { color: var(--latao); }
 .caixa .chamada {
@@ -557,7 +558,7 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
   color: var(--texto);
   transition: border-color .13s, background .13s, transform .13s;
 }
-.opcaoDeNacao:hover:not(:disabled) { border-color: var(--latao); background: rgba(201,162,39,.1); transform: translateY(-2px); }
+.opcaoDeNacao:hover:not(:disabled) { border-color: var(--latao); background: rgba(192,57,43,.1); transform: translateY(-2px); }
 .opcaoDeNacao:disabled { opacity: .34; cursor: not-allowed; }
 .opcaoDeNacao .amostra { width: 34px; height: 34px; border-radius: 5px; border: 1px solid rgba(0,0,0,.55); grid-row: span 2; }
 .opcaoDeNacao strong { font-size: 13px; font-weight: 600; display: block; }
@@ -575,7 +576,7 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
   border: 1px solid var(--borda); transition: all .13s;
 }
 .dificuldades button:hover { color: var(--texto); border-color: var(--borda-clara); }
-.dificuldades button.ativo { background: var(--latao); border-color: var(--latao); color: #1a1408; font-weight: 700; }
+.dificuldades button.ativo { background: var(--latao); border-color: var(--latao); color: #ffffff; font-weight: 700; }
 
 .bandeiraFinal { text-align: center; padding: 10px 0 4px; }
 .bandeiraFinal .amostra { width: 62px; height: 62px; border-radius: 8px; margin: 0 auto 16px; border: 2px solid var(--latao); display: block; }
@@ -590,7 +591,7 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
 .brinde {
   position: fixed; bottom: 62px; left: 50%; transform: translateX(-50%) translateY(12px);
   padding: 10px 20px; border-radius: var(--raio);
-  background: rgba(12,18,22,.97);
+  background: rgba(13,21,32,.97);
   border: 1px solid var(--borda-clara);
   border-left: 3px solid var(--verde);
   font-size: 12px; color: var(--texto);
@@ -607,8 +608,8 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
 
 ::-webkit-scrollbar { width: 9px; height: 9px; }
 ::-webkit-scrollbar-track { background: rgba(0,0,0,.24); }
-::-webkit-scrollbar-thumb { background: #2c3d47; border-radius: 5px; border: 2px solid transparent; background-clip: padding-box; }
-::-webkit-scrollbar-thumb:hover { background: #3d525f; background-clip: padding-box; }
+::-webkit-scrollbar-thumb { background: #2e4466; border-radius: 5px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: #3d5a80; background-clip: padding-box; }
 
 /* ═══════════════ TELAS ESTREITAS ═══════════════ */
 
@@ -679,13 +680,13 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
 }
 .cartao:disabled, .cartaoAvancado:disabled { opacity: .5; cursor: not-allowed; }
 .cartao strong, .cartaoAvancado strong { font-size: 12.5px; }
-.cartao small, .cartaoAvancado small { font-size: 11px; color: #a9b7c1; line-height: 1.45; }
+.cartao small, .cartaoAvancado small { font-size: 11px; color: #b0bcd0; line-height: 1.45; }
 .cartao .preco, .cartaoAvancado .preco {
   font-family: var(--mono); font-size: 10px; color: var(--texto-fraco);
 }
-.cartao.ativo { border-color: var(--latao); background: rgba(201,162,39,.12); }
+.cartao.ativo { border-color: var(--latao); background: rgba(192,57,43,.12); }
 .cartao.ativo .preco { color: var(--latao-claro); }
-.cartaoAvancado.concluido { border-color: rgba(94,168,110,.5); }
+.cartaoAvancado.concluido { border-color: rgba(39,174,96,.5); }
 .cartaoAvancado.concluido .preco { color: var(--verde); }
 
 .pesquisaTopo {
@@ -712,11 +713,11 @@ button.acao.pequena { padding: 4px 8px; font-size: 9px; }
 .comandante small { font-size: 11px; color: var(--texto-fraco); }
 .pontoDeEstado {
   width: 7px; height: 7px; border-radius: 50%; flex: none;
-  background: #5a6670;
+  background: #5a6a80;
 }
-.pontoDeEstado.ligado { background: var(--verde); box-shadow: 0 0 6px rgba(94,168,110,.8); }
+.pontoDeEstado.ligado { background: var(--verde); box-shadow: 0 0 6px rgba(39,174,96,.8); }
 
-.bloco.aviso { border-color: var(--vermelho); background: rgba(160,58,58,.12); }
+.bloco.aviso { border-color: var(--vermelho); background: rgba(231,76,60,.12); }
 
 /* ─── Fim de campanha ─── */
 
